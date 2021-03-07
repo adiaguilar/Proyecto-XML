@@ -8,3 +8,8 @@ def ListarInformacion(datos):
     for programas in nombres:
         lista_nombres.append(nombres)
     return lista_nombres
+
+def ContarInformacion(datos):
+    nombres=datos.xpath("/vuxml/vuln/affects/package/name/text()")
+    programasafectados=len(nombres)
+    return programasafectados
