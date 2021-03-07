@@ -22,5 +22,10 @@ def BuscarInformacionRelacionada(version,datos):
     vulnerabilidades=datos.xpath(f"/vuxml/vuln/affects/package/range[lt/text()='{version}']/../../../topic/text()")
     return vulnerabilidades
 
-def EjercicioLibre(nombre,datos):
-    vulnerabilidades=datos.xpath(f"/vuxml/vuln/affects/package[name/text()='{nombre}']/../../../topic/text()")
+def EjercicioLibreDescripcion(nombre,datos):
+    vulnerabilidades=datos.xpath(f"/vuxml/vuln/affects/package[name/text()='{nombre}']/../../topic/text()")
+    return vulnerabilidades
+
+def EjercicioLibreFecha(nombre,datos):
+    fecha=datos.xpath(f"/vuxml/vuln/affects/package[name/text()='{nombre}']/../../dates/discovery/text()")
+    return fecha

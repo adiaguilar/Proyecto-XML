@@ -29,3 +29,13 @@ while opcion!=6:
         for info in BuscarInformacionRelacionada(version,datos):
             print(info," ",end="")
         opcion=int(input("\nElige una opción: "))
+    
+    elif opcion==5:
+        nombre=input("Introduce el nombre del programa que se desea buscar: ")
+        print("\nLa vulnerabilidad trata de: ")
+        for info in EjercicioLibreDescripcion(nombre,datos):
+            print(info," ",end="")
+        print("\nY se descubrió en: ")
+        for fecha in EjercicioLibreFecha(nombre,datos):
+            print(fecha," ",end="")
+        opcion=int(input("\nElige una opción: "))
