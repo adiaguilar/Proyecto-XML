@@ -15,3 +15,10 @@ while opcion!=6:
     elif opcion==2:
         print(f"Se tiene registro de {ContarInformacion(datos)} programas afectados.")
         opcion=int(input("Elige una opción: "))
+    
+    elif opcion==3:
+        nombre=input("Introduce el nombre del programa que se desea buscar: ")
+        print("Las versiones del programa que son vulnerables son las siguientes: ")
+        for info in BuscarInformacion(nombre,datos):
+            print(info, " ",end="")
+        opcion=int(input("\nElige una opción: "))

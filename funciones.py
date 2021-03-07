@@ -13,3 +13,7 @@ def ContarInformacion(datos):
     nombres=datos.xpath("/vuxml/vuln/affects/package/name/text()")
     programasafectados=len(nombres)
     return programasafectados
+
+def BuscarInformacion(nombre,datos):
+    version=datos.xpath(f"/vuxml/vuln/affects/package[name/text()='{nombre}']/range/lt/text()")
+    return version
