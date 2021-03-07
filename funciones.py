@@ -17,3 +17,10 @@ def ContarInformacion(datos):
 def BuscarInformacion(nombre,datos):
     version=datos.xpath(f"/vuxml/vuln/affects/package[name/text()='{nombre}']/range/lt/text()")
     return version
+
+def BuscarInformacionRelacionada(version,datos):
+    vulnerabilidades=datos.xpath(f"/vuxml/vuln/affects/package/range[lt/text()='{version}']/../../../topic/text()")
+    return vulnerabilidades
+
+def EjercicioLibre(nombre,datos):
+    vulnerabilidades=datos.xpath(f"/vuxml/vuln/affects/package[name/text()='{nombre}']/../../../topic/text()")

@@ -22,3 +22,10 @@ while opcion!=6:
         for info in BuscarInformacion(nombre,datos):
             print(info, " ",end="")
         opcion=int(input("\nElige una opción: "))
+    
+    elif opcion==4:
+        version=input("Introduce el nombre de la versión que se desea buscar: ")
+        print("La descripción de la vulnerabilidad es: ")
+        for info in BuscarInformacionRelacionada(version,datos):
+            print(info," ",end="")
+        opcion=int(input("\nElige una opción: "))
